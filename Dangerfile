@@ -26,5 +26,5 @@ if github.pr_body.length < 5
 end
 
 if git.commits.any? { |c| c.message =~ /^Merge branch/ }
-  warn 'Please rebase to get rid of the merge commits in this PR'
+  fail 'Please rebase to get rid of the merge commits in this PR'
 end
